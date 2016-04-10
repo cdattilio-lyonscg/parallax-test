@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <!-- @import "_head.html" -->
+  <body>
+    <!-- @import "_header.html" -->
+
+    <div class="canvas-technique">
+      <canvas id="parallax-canvas">
+      </canvas>
+    </div>
+
+    <div class="canvas-technique-content">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-6">
+          <div class="slide-content">
+            <div class="content-panel animated slideInRight">
+              <small>Technique #3</small>
+              <h1>Canvas Frames</h1>
+              <p>
+                In this technique, we have a single canvas element where we render an image sequence to. This is the technique used on the <a href="http://discover.store.sony.com/be-moved/">Sony Be Moved campaign</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pad it more -->
+      <div class="slide-content"></div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="slide-content">
+            <div class="content-panel">
+              <h1>How it's done</h1>
+              <p>
+                This method is reliant on the HTML5 canvas element that has a fixed position in the background. We pre-load a sequence of images. As the user scrolls, we render the sequence of images to the canvas.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pad it more -->
+      <div class="slide-content"></div>
+
+      <div class="row">
+        <div class="col-md-6 col-md-offset-6">
+          <div class="slide-content">
+            <h1>Code</h1>
+            <pre class="prettyprint lang-coffee linenums">
+resizeCanvas = ->
+  windowWidth = $(window).width()
+  windowHeight = $(window).height()
+  $('#parallax-canvas').attr('width', windowWidth).attr('height', windowHeight)
+resizeCanvas()
+$(window).resize(resizeCanvas)
+
+canvas = document.getElementById('parallax-canvas')
+context = canvas.getContext('2d')
+
+# Global current frame
+currentFrame = 1
+totalFrames = 112
+sequence = []
+
+# Render current frame
+renderCurrentFrame = ->
+  offset = $(window).scrollTop()
+  currentFrame = Math.round(offset / 40)
+  if currentFrame >= totalFrames
+    currentFrame = totalFrames - 1
+  render(sequence[currentFrame])
+
+# render an image from the sequence
+render = (img) ->
+  # Set image drawing
+  windowWidth = $(window).width()
+  windowHeight = $(window).height()
+  windowAspectRatio = windowWidth / windowHeight
+  videoWidth = 1920
+  videoHeight = 1080
+  videoAspectRatio = videoWidth / videoHeight
+
+  if windowAspectRatio > videoAspectRatio
+    w = windowWidth
+    h = windowWidth / videoAspectRatio
+  else
+    w = videoAspectRatio * windowHeight
+    h = windowHeight
+
+  # Center the image
+  x = -(w - windowWidth)/2
+  context.drawImage(img, x, 0, w, h)
+
+# Load the image sequence into an array
+loadImageSequence = ->
+  sequence = []
+  for i in [1..totalFrames]
+    img = new Image()
+    num = ("0000" + i).slice(-4);
+    file = "#{rootPath}/sequence/bbb_#{num}.jpg"
+    img.src = file
+    img.frame = i
+    img.onload = ->
+      loadedFrameCallback(this)
+    sequence.push img
+  return sequence
+
+loadedFrameCallback = (img) ->
+  # Draw first frame
+  if img.frame == 1
+    render(img)
+
+# Load the sequence into an array
+sequence = loadImageSequence()
+
+# Bind rendering
+$(window).resize(renderCurrentFrame)
+$(window).scroll ->
+  renderCurrentFrame()
+$(window).on 'touchmove', renderCurrentFrame</pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pad it more -->
+      <div class="slide-content"></div>
+
+      <div class="row">
+        <div class="col-md-6 col-md-offset-6">
+          <div class="slide-content">
+            <div class="content-panel">
+              <h1>Challenges</h1>
+              <p>Of all the techniques, this is the most complex because it requires quite a bit of HTML5 Javascript expertise and a creative team that can produce the movie sequence.</p>
+              <p>It is also the heaviest as the image sequence can be very large. <a href="http://discover.store.sony.com/be-moved/">Sony's Be Moved page</a> sends > 40MB to the user! </p>
+              <p>
+                Thanks for checking this presentation out.
+              </p>
+              <p>
+                Leonard Teo<br />
+                leo (at) ballistiq.com<br />
+                <a href="http://www.ballistiq.com">Ballistiq</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pad it more -->
+      <div class="slide-content"></div>
+    </div>
+  </div>
+
+  </body>
+</html>

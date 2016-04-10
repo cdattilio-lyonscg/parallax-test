@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Parallax Techniques</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <link href="css/application.css" rel="stylesheet" />
+
+  <script src="js/jquery-1.10.2.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/application.js"></script>
+  <script src="js/prettify.js"></script>
+</head>  <body>
+    <header class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-header">
+    <button class="navbar-toggle" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="index.html">Parallax Techniques</a>
+  </div>
+  <nav class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="index.html">Fixed BG</a>
+      </li>
+      <li>
+        <a href="technique2.html">Background Offset</a>
+      </li>
+      <li>
+        <a href="technique3.html">Canvas</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <a href="https://github.com/ballistiq/parallax-demo">Repo</a>
+      </li>
+      <li>
+        <a href="https://twitter.com/leonardteo">@leonardteo</a>
+      </li>
+      <li>
+        <a href="http://www.ballistiq.com">Ballistiq</a>
+      </li>
+      <li>
+        <a href="http://www.bigbuckbunny.org/">Big Buck Bunny</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+    <div class="offset-technique" data-parallax-offset>
+    </div>
+
+    <div class="offset-technique-content">
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="slide-content">
+            <div class="content-panel animated slideInLeft">
+              <small>Technique #2</small>
+              <h1>Background Offset</h1>
+              <p>
+                This is a popular technique where we offset the background position when the user scrolls. Check out the <a href="http://ianlunn.co.uk/plugins/jquery-parallax/">jQuery Parallax plugin</a> which is an easy way to integrate this effect.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pad it more -->
+      <div class="slide-content"></div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="slide-content">
+            <div class="content-panel">
+              <h1>How it's done</h1>
+              <p>
+                This method requires Javascript. We take the distance that the user has scrolled from the top, take a fraction of that distance and set the background position to offset the y-position by that amount.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pad it more -->
+      <div class="slide-content"></div>
+
+      <div class="row">
+        <div class="col-md-6 col-md-offset-6">
+          <div class="slide-content">
+
+            <h1>Code</h1>
+            <pre class="prettyprint lang-coffee linenums">
+offsetBackground = ->
+  distanceFromTop = $(window).scrollTop()
+  $("div[data-parallax-offset]").each ->
+    offset = Math.round( - distanceFromTop * 0.2 )
+    $(this).css('background-position', "50% #{offset}px")
+
+$(window).scroll ->
+  offsetBackground()</pre>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Pad it more -->
+      <div class="slide-content"></div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="slide-content">
+            <center>
+              <h1>Awesome!</h1>
+              <a href="technique3.html" class="btn btn-info">Next Technique</a>
+            </center>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pad it more -->
+      <div class="slide-content"></div>
+
+    </div>
+
+  </body>
+</html>

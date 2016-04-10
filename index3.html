@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="res/css/style3.css" type="text/css">
+	<script type="text/javascript" src="res/js/jquery.min.js"></script>
+	<style>
+		.slide { transform: translate(0%, 0%) }
+	</style>
+</head>
+
+<body>
+	<div id="page-content">
+		<div id="Start" class="powerSwitch">Start video</div>
+		<div id="Stop" class="powerSwitch">Stop video</div>
+		<div id="sideMenu" data-0p="opacity: 0" data-149p="" data-150p="opacity: 1">
+			<ul>
+				<li data-130p="transform:translate(400%,0);" data-160p="transform:translate(0,0);">
+					<span class="menuItem" data-0p="opacity: 1" data-598p="" data-599p="opacity: 0"></span>
+					<span class="toolTip" data-0p="opacity: 0; transform:translate(20%,0);" data-199p="" data-200p="transform:translate(0%,0); opacity: 1;" data-350p="" data-500p="transform:translate(-20%,0); opacity: 0;">The Story</span>
+				</li>
+				<li data-140p="transform:translate(400%,0);" data-170p="transform:translate(0,0);">
+					<span class="menuItem" data-0p="opacity: 0" data-599p="" data-600p="opacity: 1" data-1048p="" data-1049p="opacity: 0"></span>
+					<span class="toolTip" data-0p="opacity: 0; transform:translate(20%,0);" data-599p="" data-600p="transform:translate(0%,0); opacity: 1;" data-750p="" data-900p="transform:translate(-20%,0); opacity: 0;">The Science</span>
+				</li>
+				<li data-150p="transform:translate(400%,0);" data-180p="transform:translate(0,0);">
+					<span class="menuItem" data-0p="opacity: 0;" data-1049p="" data-1050p="opacity: 1;"></span>
+					<span class="toolTip" data-0p="opacity: 0; transform:translate(20%,0);" data-1049p="" data-1050p="transform:translate(0%,0); opacity: 1;">The End</span>
+				</li>
+		
+			</ul>
+		</div>
+            <div id="slides-container">
+				<div id="slide-1" class="slide" 
+					data-0="transform:translate(0%,0%);"
+					data-150p="transform:translate(0%,-100%);"
+				></div>
+				<div id="slide-2" class="slide"
+					data-450p="transform:translate(0px,0%);"
+					data-475p=""
+					data-480p="transform:translate(-50px ,0%);"
+					data-550p=""
+					data-600p="transform:translate(-50px,-100%);"
+				>
+					<div class="caption"
+						data-160p="opacity: 0; transform:translate(0px,-200%);"
+						data-200p="opacity: 1; transform:translate(0px,0px);"
+						data-250p=""
+						data-280p="opacity: 0;"
+						data-anchor-target="#helper"
+					>
+						<h1>Inspired by the world's first cold cream,</h1>
+					</div>
+					<div class="caption"
+						data-281p="opacity: 0;"
+						data-330p="opacity: 1; transform:translate(0px,0px);"
+						data-400p=""
+						data-430p="opacity: 0; transform:translate(-100px,0px);"
+						data-anchor-target="#helper"
+					>
+						<h1>
+							A nourishing formula protected by monks
+							<br/>
+							for centuries.
+						</h1>
+					</div>
+				</div>
+				<div id="slide-3" class="slide canvas"
+					data-750p="transform:translate(0%,0%);"
+					data-1050p="transform:translate(0%,-100%);"
+				><!-- 600-1050-->
+					<div class="caption" 
+						data-600p="opacity: 0;" 
+						data-625p="opacity: 1;" 
+						data-640p="" 
+						data-650p="opacity: 0;"
+					>
+						Creme Ancienne is rooted in innovation
+					</div>
+					
+					<div class="caption" 
+						data-600p="opacity: 0;" 
+						data-650p=""
+						data-675p="opacity: 1;" 
+						data-690p=""
+						data-700p="opacity: 0;"
+					>
+						Refined by the most precious natural ingredients today
+					</div>
+					<!--<img src="res/img/BG/water-1.jpg" data-600p="opacity: 1;" data-625p="opacity: 0;"/>
+					<img src="res/img/BG/water-2.jpg" data-600p="opacity: 0;" data-625p="opacity: 1;" data-650p="opacity: 0;"/>
+					<img src="res/img/BG/water-3.jpg" data-600p="opacity: 0;" data-650p="opacity: 0;" data-650p="opacity: 1;"/>
+					<img src="res/img/BG/water-4.jpg" data-600p="opacity: 0;" data-650p="opacity: 0;"/>
+					<img src="res/img/BG/water-5.jpg" data-600p="opacity: 0;" data-650p="opacity: 0;"/>-->
+				</div>
+				<div id="slide-5" class="slide" 
+					data-0p="opacity: 0;"
+					data-741p=""
+					data-742p="opacity: 1;"
+					data-1050p="transform:translate(0%,0%);"
+					data-1100p=""
+					data-1200p="transform:translate(0%,-100%); opacity: 1;"
+					data-1202p="opacity: 0;"
+				>
+					<video id="video" class="video-js vjs-default-skin" preload="none" width="100%" height="100%" poster="Penguins.jpg">
+						<source src="http://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+						<source src="http://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+					</video>
+				</div>
+				<div id="slide-4" class="slide"
+					data-1200p="transform:translate(0%,0%);"
+				>
+					<div class="caption"
+						data-250p="opacity: 0; transform:translate(300px,0px);"
+						data-300p="opacity: 1; transform:translate(0px,0px);"
+						data-anchor-target="#helper"
+					>
+						
+					</div>
+				</div>
+
+            </div>
+
+            <div id="helper">
+                <div class="marker red"></div>
+                <div class="marker green"></div>
+                <div class="marker blue"></div>
+                <div class="marker yellow"></div>
+            </div>
+
+
+
+
+
+		</div>
+		<!-- /Demo content -->
+	
+	<div style="background: black; height: 100%; width: 100%"></div>
+	
+	<script type="text/javascript" src="res/js/skrollr.js"></script>	
+	<script type="text/javascript" src="res/js/scrollFun3.js"></script>
+</body>
+</html>

@@ -1,0 +1,276 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    font: 62.5%/1 "Helvetica", "Lucida Grande", sans-serif;
+}
+
+.clearfix {
+    display: block;
+}
+
+p {
+    color: #666666;
+    font-size: 14px;
+}
+
+h2 {
+    color: #666666;
+    font-size: 20px;
+}
+
+h3 {
+    color: #666666;
+    font-size: 16px;
+}
+
+h1, h2, h3, h4 {
+    font-weight: normal;
+}
+
+.feature-details {
+    min-height: 800px;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-details .bg, .feature-details .bgs {
+    position: fixed;
+    opacity: 0;
+    z-index: 2;
+    -webkit-transition: opacity .5s ease-out;
+    transition: opacity .5s ease-out;
+}
+
+/*.slide-group:first-child .feature-details .bg, .slide-group:first-child .feature-details:first-child .bgs {
+    opacity: 1;
+    z-index: 3;
+}*/
+
+.feature-details.active .bg, .feature-details.active .bgs {
+    opacity: 1;
+    z-index: 3;
+}
+
+img, th, td {
+    vertical-align: top;
+}
+
+.bgs {
+    position: absolute;
+    overflow: hidden;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.bgs>div {
+    position: absolute;
+    top: 0;
+    width: 1000%;
+    height: 100%;
+}
+
+.bgs>div {
+    top: -200%;
+    width: 100%;
+    height: 500%;
+    left: 0;
+    right: auto;
+}
+
+.bgs>div {
+    right: 0;
+    left: auto;
+}
+
+.bgs>div>img {
+    display: block;
+    width: auto;
+    height: 100%;
+}
+
+.bgs>div>img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+.bgs>div>img, .bgs>div>.canvas {
+    margin: auto 0 auto auto;
+}
+
+.feature-details .cont {
+    position: absolute;
+    top: 30%;
+    width: 100%;
+    left: 0;
+}
+
+.feature-details .wrapper-content {
+    padding: 0;
+}
+
+.wrapper-content {
+    display: block;
+    width: 960px;
+    margin: 0 auto;
+}
+
+.feature-details .text-wrap {
+    float: left;
+    position: relative;
+    width: 60%;
+}
+
+.feature-details .text-wrap>.ic-wrap {
+    padding-left: 6.2em;
+}
+
+.feature-details .strip {
+    position: fixed;
+    visibility: hidden;
+    left: 50%;
+    top: 30%;
+    margin: -1430px 0 0 -480px;
+    z-index: 2;
+}
+
+.feature-details .strip {
+    position: absolute;
+    left: 0;
+    top: -1500px;
+    height: 3000px;
+    width: 4.2em;
+    margin-top: 6.8em;
+}
+
+.feature-details .strip .ic {
+    opacity: 0;
+    -webkit-transition: opacity .5s ease-out;
+    transition: opacity .5s ease-out;
+}
+
+.feature-details .strip i.ic {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -2.1em 0 0 -2.1em;
+}
+
+.feature-details .text-wrap h2, .feature-details .text-wrap h3, .feature-details .text-wrap p {
+    position: relative;
+    z-index: 4;
+}
+
+.feature-details .text-wrap h2 {
+    font-family: "Proxima Nova Light",Arial,Helvetica,sans-serif;
+    font-size: 60px;
+    line-height: normal;
+    font-weight: normal;
+    color: #fff;
+    margin-top: .15em;
+    margin-right: -20%;
+}
+
+.feature-details .text-wrap p {
+    font-family: "Proxima Nova Regular",Arial,Helvetica,sans-serif;
+    font-size: 18px;
+    line-height: 1.5em;
+    font-weight: normal;
+    color: #fff;
+    margin: 1.72em 0 0 0;
+}
+
+.feature-details .text-wrap h3 {
+    font-family: "Proxima Nova Semibold",Arial,Helvetica,sans-serif;
+    font-size: 16px;
+    line-height: normal;
+    font-weight: normal;
+    color: #fff;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: .3em .6em;
+    margin: 0;
+    position: relative;
+}
+
+.slide-group>.nav-group {
+    position: fixed;
+    right: 5%;
+    top: 50%;
+    width: 1em;
+    height: auto;
+    font-size: 1.1em;
+    line-height: normal;
+    margin-top: -5em;
+    visibility: visible;
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -webkit-transition: opacity .3s ease-out;
+    transition: opacity .3s ease-out;
+    z-index: 3;
+}
+.slide-group>.nav-group.outside,
+.slide-group>.nav-group.none {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    visibility: hidden;
+}
+.slide-group>.nav-group ul,
+.slide-group>.nav-group ul li {
+    display: block;
+    list-style: none;
+    margin: .7em 0;
+    padding: 0;
+}
+.slide-group>.nav-group ul li a {
+    display: block;
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    outline: none;
+    width: 11px;
+    height: 11px;
+    font-family: "FontAwesome";
+}
+.slide-group>.nav-group ul li a:before {
+    content: "\f10c";
+    display: block;
+}
+.slide-group>.nav-group.group-links-01 ul li a.group-links-01.main:before,
+.slide-group>.nav-group.group-links-02 ul li a.group-links-02.main:before,
+.slide-group>.nav-group.group-links-03 ul li a.group-links-03.main:before,
+.slide-group>.nav-group.group-links-04 ul li a.group-links-04.main:before,
+.slide-group>.nav-group ul li a.active:before {
+    content: "\f111";
+}
+.slide-group>.nav-group ul li a span {
+    position: absolute;
+    left: -5000px;
+}
+.slide-group>.nav-group ul li a.group-links,
+.slide-group>.nav-group ul li a.none {
+    display: none;
+}
+.slide-group>.nav-group ul li a.group-links.main {
+    display: block;
+}
+

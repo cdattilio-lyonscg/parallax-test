@@ -1,0 +1,29 @@
+body, html { height: 100%; }
+body { padding: 0; margin: 0; }
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+#content { position: fixed; top: 0; left: 0; width: 100%; }
+
+.backgroundWrapper { 
+	background-attachment: fixed;
+    background-position: center 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    overflow-x: hidden;
+	/*width: 100%;*/
+}
+	
+#scene1 { background-image: url(../img/BG/bg-1.jpg); }
+#scene2 { background-image: url(../img/BG/bg-2.jpg); }
+#scene3 { background-image: url(../img/BG/bg-3.jpg); }
+
+.stopMoving { position: absolute; width: 100%; top: 0; left: 0;  }

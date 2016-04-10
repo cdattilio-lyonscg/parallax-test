@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="main.css" type="text/css">
+    <!--<link rel="stylesheet" href="font-awesome.css" type="text/css">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="res/js/jquery.min.js"></script>
+    <script type="text/javascript" src="res/js/skrollr.js"></script>
+    
+    <script>
+    jQuery(document).ready(function() {
+        skrollr.init({
+            keyframe: function(element, name, direction) {
+                $(element).trigger(name, direction);
+            }
+        });
+        
+        $('#lady-dog').on('dataCenterBottom', function(e, direction) {
+            if (direction == 'down') {
+                //$(this).find('.bgs').css({"opacity": "0", "z-index": "2"});
+                //$('#two-ladies').find('.bgs').css({"opacity": "1", "z-index": "3"});
+                $(this).removeClass('active');
+                $('a[href$="slide-1"]').removeClass('active');
+                $('#two-ladies').addClass('active');
+                $('a[href$="slide-2"]').addClass('active');
+            }
+        });
+
+        $('#two-ladies').on('dataCenterTop', function(e, direction) {
+            if (direction == 'up') {
+                //$(this).find('.bgs').css({"opacity": "0", "z-index": "2"});
+                //$('#lady-dog').find('.bgs').css({"opacity": "1", "z-index": "3"});
+                $(this).removeClass('active');
+                $('a[href$="slide-2"]').removeClass('active');
+                $('#lady-dog').addClass('active');
+                $('a[href$="slide-1"]').addClass('active');
+            }
+        });
+
+        $('#hand-fitbit').on('dataCenterTop', function(e, direction) {
+            if (direction == 'down') {
+                //$(this).find('.bgs').css({"opacity": "1", "z-index": "3"});
+                //$('#two-ladies').find('.bgs').css({"opacity": "0", "z-index": "2"});
+                $(this).addClass('active');
+                $('a[href$="slide-3"]').addClass('active');
+                $('#two-ladies').removeClass('active');
+                $('a[href$="slide-2"]').removeClass('active');
+            } else if (direction == 'up') {
+                //$(this).find('.bgs').css({"opacity": "0", "z-index": "2"});
+                //$('#two-ladies').find('.bgs').css({"opacity": "1", "z-index": "0"});
+                $(this).removeClass('active');
+                $('a[href$="slide-3"]').removeClass('active');
+                $('#two-ladies').addClass('active'); 
+                $('a[href$="slide-2"]').addClass('active');
+            }
+        });
+
+        $('#pocket-fitbit').on('dataCenterTop', function(e, direction) {
+            if (direction == 'down') {
+                //$(this).find('.bgs').css({"opacity": "1", "z-index": "3"});
+                //$('#hand-fitbit').find('.bgs').css({"opacity": "0", "z-index": "2"});
+                $(this).addClass('active');
+                $('a[href$="slide-4"]').addClass('active');
+                $('#hand-fitbit').removeClass('active'); 
+                $('a[href$="slide-3"]').removeClass('active');
+            } else if (direction == 'up') {
+                //$(this).find('.bgs').css({"opacity": "0", "z-index": "2"});
+                //$('#hand-fitbit').find('.bgs').css({"opacity": "1", "z-index": "0"});
+                $(this).removeClass('active');
+                $('a[href$="slide-4"]').removeClass('active');
+                $('#hand-fitbit').addClass('active'); 
+                $('a[href$="slide-3"]').addClass('active');
+            }
+        });
+    
+        
+    });
+    </script>
+</head>
+
+<body>
+
+<div class="slide-group full-on-window" data-nav-mousewheel="true">
+
+
+    <div id="lady-dog" class="max-height slide feature-details" data-emit-events data-center-bottom>
+        
+        <div class="bgs" style="opacity: 1;z-index: 3;"><div>
+            <img src="images/lady-dog.jpg" class="js-load-img">
+
+        </div></div>
+
+        <div class="cont">
+            <div class="clearfix wrapper-content">
+                <div class="text-wrap"><div class="ic-wrap">
+                    <i class="strip"><i class="ic ic-run-circle">
+                    </i></i>
+                    <h3><b>All-Day Activity</b></h3>
+                    <h2 class='sectionVP'>Get a kick <br> out of fitness.</h2>
+                    <p class="mobile-visible">Turn everyday life into a path to fitness with Zip, a simple device that tracks all-day activity like steps taken, distance traveled and calories burned.</p>
+                    <p class="mobile-hide">Turn everyday life into a path to fitness with Zip, a simple device that tracks all-day activity like steps taken, distance traveled and calories burned.</p>
+                </div></div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div>
+
+        <div id="two-ladies" class="at-fixed-unit max-height slide feature-details" data-nav-class="group-links group-links-01 main" data-emit-events data-center-top>
+
+            <div class="bgs"><div>
+                <img src="images/two-ladies.jpg" class="js-load-img">
+            </div></div>
+
+            <div class="cont" style="top: 20%">
+                <div class="clearfix wrapper-content">
+                    <div class="text-wrap"><div class="ic-wrap">
+                        <i class="strip"><i class="ic ic-watch-circle">
+                        </i></i>
+                        <div><div class="to-fixed" data-fixed-class="text-wrap">
+                            <h3><b>Tap Display</b></h3>
+                            <h2 class='sectionVP'>Progress at <br> your fingertips.</h2>
+
+                            <p class="mobile-hide">Celebrate how much you do in a day with the easy-to-use Zip display. Flip through your activity stats and the time of day just by tapping the screen, and see Zip’s smiley face grow as you increase your activity throughout the day.</p>
+                            <p class="mobile-visible">Celebrate how much you do in a day with the easy-to-use Zip display. Flip through your activity stats and the time of day just by tapping the screen, and see Zip’s smiley face grow as you increase your activity throughout the day.</p>
+
+                        </div></div>
+
+                    </div></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="max-height slide feature-details" id="hand-fitbit" data-emit-events data-center-top>
+
+        <div class="bgs" data-ration="1.554726368"><div>
+            <img src="images/hand-fitbit.jpg" class="js-load-img">
+        </div></div>
+
+        <div class="cont">
+            <div class="clearfix wrapper-content">
+                <div class="text-wrap"><div class="ic-wrap">
+                    <i class="strip"><i class="ic ic-wifi-circle">
+                    </i></i>
+                    <h3><b>Wireless Syncing</b></h3>
+                    <h2 class='sectionVP'>Find the motivation <br> to move more.</h2>
+                    <p class="mobile-visible">Zip syncs your daily stats to your computer and <a href="/devices">150+ leading smartphones</a>, and shows your progress in easy-to-read charts and graphs, so you can see how small changes add up to make a big impact.</p>
+                    <p class="mobile-hide">Zip syncs your daily stats to your computer and <a href="/devices">150+ leading smartphones</a>, and shows your progress in easy-to-read charts and graphs, so you can see how small changes add up to make a big impact.</p>
+                </div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-height slide feature-details" id="pocket-fitbit" data-emit-events data-center-top>
+
+        <div class="bgs" data-ration="1.554726368"><div>
+            <img src="images/pocket-fitbit.jpg" class="js-load-img">
+        </div></div>
+
+        <div class="cont">
+            <div class="clearfix wrapper-content">
+                <div class="text-wrap"><div class="ic-wrap">
+                    <i class="strip"><i class="ic ic-sun-circle">
+                    </i></i>
+                    <h3><b>Wear + Life</b></h3>
+                    <h2 class='sectionVP'>Fits in your day, <br> and your pocket.</h2>
+                    <p class="mobile-visible">Zip fits comfortably in your pocket, on a belt, or a bra, for a tracker that’s as discreet or visible as you want it to be. It’s also water-resistant, and has a replaceable watch battery that lasts up to six months*—so you can wear it all day, every day without needing a charge.</p>
+                    <p class="mobile-hide">Zip fits comfortably in your pocket, on a belt, or a bra, for a tracker that’s as discreet or visible as you want it to be. It’s also water-resistant, and has a replaceable watch battery that lasts up to six months*—so you can wear it all day, every day without needing a charge.</p>
+                </div></div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="nav-group mobile-hide group-links group-links-01 main">
+        <ul>
+            <li>
+                <a href="#slide-1" class="active"><span>feature-details</span></a>
+            </li>
+            <li>
+                <a href="#slide-2" class=""><span>slide-1</span></a>
+            </li>
+            <li>
+                <a href="#slide-3" class=""><span>slide-2</span></a>
+            </li>
+            <li>
+                <a href="#slide-4" class=""><span>slide-3</span></a>
+            </li>
+        </ul>
+    </nav>
+</div>
+  
+
+</body>
+
+</html>
