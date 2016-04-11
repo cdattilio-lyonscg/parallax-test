@@ -1,0 +1,201 @@
+
+.pdp-custom .attributes-item .attributes-label, a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+    color: #29292A;
+    text-rendering: optimizeLegibility;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section {
+    display: block;
+}
+
+.swipebox {
+    text-align: center
+}
+
+.swipebox {
+    margin: 30px auto;
+    padding-top: 50px
+}
+.swipebox img {
+    user-drag: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none
+}
+.swipebox .bar {
+    color: #fff;
+    display: block;
+    text-decoration: none;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    background-size: 100% 100%;
+    z-index: 200
+}
+.swipebox #scroller {
+    height: 700px;
+    position: relative;
+    width: 100%;
+    z-index: 0
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+    .swipebox #scroller {
+        height: 500px
+    }
+}
+@media (max-width: 767px) {
+    .swipebox {
+        overflow: hidden
+    }
+    .swipebox #scroller {
+        height: 400px;
+        overflow: hidden
+    }
+}
+.swipebox #scroller .pane {
+    position: absolute;
+    height: 100%;
+    overflow: hidden;
+    top: 0;
+    width: 100%
+}
+.swipebox #scroller .pane section {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%
+}
+.swipebox #scroller .pane section img {
+    width: 100%;
+    float: left
+}
+.swipebox #scroller .pane .is-overlay {
+    background-color: rgba(0, 0, 0, .4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0
+}
+.swipebox #side-0 {
+    left: -50%
+}
+.swipebox #side-0 section {
+    left: 50%
+}
+.swipebox #side-1 {
+    right: -50%
+}
+.swipebox #side-1 section {
+    right: 50%
+}
+
+.swipebox.day-night {
+    padding: 0
+}
+@media (min-width: 768px) {
+    .swipebox.day-night {
+        /*margin-top: 80px*/
+    }
+}
+@media (max-width: 767px) {
+    .swipebox.day-night {
+        margin-top: 0
+    }
+}
+.swipebox.day-night .day-night-header {
+    font-family: fortescue_pro, serif;
+    font-size: 18px;
+    font-size: 1.125rem;
+    line-height: 14px;
+    letter-spacing: .04em;
+    font-weight: 700;
+    margin: 25px 0
+}
+@media (min-width: 768px) {
+    .swipebox.day-night .bar {
+        height: 175px;
+        width: 175px;
+        background-image: url(images/diamond_slider.png);
+        padding-top: 65px;
+        font-family: fortescue_pro, serif;
+        font-size: 18px;
+        font-size: 1.125rem;
+        font-weight: 700
+    }
+    .swipebox.day-night .bar span {
+        display: block
+    }
+    .swipebox.day-night .bar .click-slide {
+        font-family: BrownStd, Sans-serif;
+        font-size: 10px;
+        font-size: .625rem;
+        text-transform: uppercase;
+        letter-spacing: .22em;
+        line-height: 13px;
+        font-weight: 400
+    }
+    .swipebox.day-night .bar .click-slide::before {
+        content: "►";
+        -webkit-transform: scaleX(-.5) scaleY(.8) translateY(2px);
+        -ms-transform: scaleX(-.5) scaleY(.8) translateY(2px);
+        transform: scaleX(-.5) scaleY(.8) translateY(2px);
+        -webkit-filter: FlipH;
+        filter: FlipH;
+        display: inline-block;
+        margin-right: 5px;
+        font-size: 13px
+    }
+    .swipebox.day-night .bar .click-slide::after {
+        content: "►";
+        display: inline-block;
+        margin-left: 4px;
+        -webkit-transform: scaleX(.5) scaleY(.8) translateY(2px);
+        -ms-transform: scaleX(.5) scaleY(.8) translateY(2px);
+        transform: scaleX(.5) scaleY(.8) translateY(2px);
+        font-size: 13px
+    }
+}
+@media (max-width: 767px) {
+    .swipebox.day-night .bar {
+        height: 75px;
+        width: 75px;
+        background-image: url(../../images/interface/diamond_slider_mobile.png)
+    }
+    .swipebox.day-night .bar span {
+        display: block;
+        font-family: BrownStd, Sans-serif;
+        font-size: 9px;
+        font-size: .5625rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        line-height: 75px;
+        letter-spacing: .24em
+    }
+}
+
+@media (min-width: 1440px)
+.container {
+    width: 1400px;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 2em;
+    width: 100%;
+}
+
+@media (min-width: 1025px)
+.hide-desktop, .show-mobile, .show-tablet {
+    display: none!important;
+}
+
+*, .select2-container, .select2-drop, .select2-search, .select2-search input {
+    box-sizing: border-box;
+}

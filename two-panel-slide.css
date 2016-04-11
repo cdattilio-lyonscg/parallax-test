@@ -1,0 +1,480 @@
+.container {
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.container > .inner {
+    margin-left: 12.5%;
+    margin-right: 12.5%;
+}
+
+.align-right {
+    float: right;
+    right: 0;
+}
+
+.align-vertical {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -o-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -o-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.inner {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+    height: 100%;
+    zoom: 1;
+}
+
+.inner:after {
+    clear: both;
+}
+
+.inner:before, .inner:after {
+    content: "";
+    display: table;
+}
+
+.view {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    -webkit-transition: height 0.7s cubic-bezier(0.825, 0, 0.5, 1);
+    -moz-transition: height 0.7s cubic-bezier(0.825, 0, 0.5, 1);
+    -o-transition: height 0.7s cubic-bezier(0.825, 0, 0.5, 1);
+    -ms-transition: height 0.7s cubic-bezier(0.825, 0, 0.5, 1);
+    transition: height 0.7s cubic-bezier(0.825, 0, 0.5, 1);
+}
+.view-top {
+    top: 0
+}
+.view-bottom {
+    bottom: 0
+}
+.view.active {
+    z-index: 3;
+}
+.view.active > .full-view {
+    height: 100%
+}
+.view.open {
+    height: 100%;
+}
+.view.open > .full-view {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none
+}
+.view.open > .half-view {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0)
+}
+.view > .full-view {
+    height: 200%;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -webkit-transition: opacity 0.7s cubic-bezier(0.825, 0, 0.5, 1);
+    -moz-transition: opacity 0.7s cubic-bezier(0.825, 0, 0.5, 1);
+    -o-transition: opacity 0.7s cubic-bezier(0.825, 0, 0.5, 1);
+    -ms-transition: opacity 0.7s cubic-bezier(0.825, 0, 0.5, 1);
+    transition: opacity 0.7s cubic-bezier(0.825, 0, 0.5, 1)
+}
+.view > .half-view {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    -webkit-transition: opacity 0.7s cubic-bezier(0.825, 0, 0.5, 1);
+    -moz-transition: opacity 0.7s cubic-bezier(0.825, 0, 0.5, 1);
+    -o-transition: opacity 0.7s cubic-bezier(0.825, 0, 0.5, 1);
+    -ms-transition: opacity 0.7s cubic-bezier(0.825, 0, 0.5, 1);
+    transition: opacity 0.7s cubic-bezier(0.825, 0, 0.5, 1)
+}
+@media only screen and (max-width: 767px) {
+    .full-view .btn {
+        font-size: 0;
+        padding-right: 20px;
+    }
+    .full-view .btn > span {
+        margin-right: 0
+    }
+}
+@media only screen and (max-width: 991px) {
+    .full-view .hero {
+        display: none
+    }
+}
+@media only screen and (max-width: 991px) and (orientation: landscape) {
+    .half-view .hero {
+        display: none
+    }
+}
+.detail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+}
+.detail .plus {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: 18px;
+    margin-left: -22px
+}
+.detail.active {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+    z-index: 2
+}
+.detail-description {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.detail-description > .scrollable {
+    padding-left: 20%;
+    padding-right: 20%
+}
+.pane {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    -webkit-transition: all 0.7s cubic-bezier(0.825, 0, 0.5, 1);
+    -moz-transition: all 0.7s cubic-bezier(0.825, 0, 0.5, 1);
+    -o-transition: all 0.7s cubic-bezier(0.825, 0, 0.5, 1);
+    -ms-transition: all 0.7s cubic-bezier(0.825, 0, 0.5, 1);
+    transition: all 0.7s cubic-bezier(0.825, 0, 0.5, 1);
+}
+@media only screen and (max-width: 991px) {
+    .pane {
+        height: 50%;
+        top: auto
+    }
+}
+.pane-left {
+    left: 0;
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    transform: translateX(-100%);
+}
+.open > .pane-left {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -o-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0)
+}
+@media only screen and (max-width: 991px) {
+    .pane-left {
+        bottom: 0
+    }
+}
+.pane-right {
+    right: 0;
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    transform: translateX(100%);
+}
+.open > .pane-right {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -o-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0)
+}
+@media only screen and (max-width: 991px) {
+    .pane-right {
+        top: 0;
+        width: 100%;
+        height: 100%
+    }
+    .pane-right > .imagefill {
+        width: 50%;
+        float: right
+    }
+    .pane-right .plus {
+        left: 50%
+    }
+}
+.marker {
+    position: absolute;
+    z-index: 1
+}
+.plus {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 3px solid transparent;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    display: block;
+    width: 43px;
+    height: 43px;
+    position: relative;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.plus:before,
+.plus:after {
+    content: "";
+    position: absolute;
+    display: block;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    z-index: 2
+}
+.plus:before {
+    width: 13px;
+    height: 1px;
+    top: 18px;
+    left: 12px
+}
+.plus:after {
+    width: 1px;
+    height: 13px;
+    top: 12px;
+    left: 18px
+}
+.plus > i {
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    display: block;
+    font-size: 0;
+    width: 31px;
+    height: 31px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    z-index: 1
+}
+.plus:hover:before,
+.plus.active:before,
+.plus:hover:after,
+.plus.active:after {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg)
+}
+.plus.active:before,
+.plus.active:after {
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    transform: rotate(135deg)
+}
+.plus.active > i {
+    width: 35px;
+    height: 35px;
+    top: 1px;
+    left: 1px
+}
+.plus.active:hover:before,
+.plus.active:hover:after {
+    -webkit-transform: rotate(225deg);
+    -moz-transform: rotate(225deg);
+    -o-transform: rotate(225deg);
+    -ms-transform: rotate(225deg);
+    transform: rotate(225deg)
+}
+.plus.plus-white {
+    border-color: #f7f7f7;
+}
+.plus.plus-white:before,
+.plus.plus-white:after {
+    background-color: #f7f7f7
+}
+.plus.plus-white > i {
+    background-color: rgba(247, 247, 247, 0.1)
+}
+.plus.plus-white:hover,
+.plus.plus-white.active {
+    border-color: rgba(247, 247, 247, 0.4);
+}
+.plus.plus-white:hover:before,
+.plus.plus-white.active:before,
+.plus.plus-white:hover:after,
+.plus.plus-white.active:after {
+    background-color: #1a1a1a
+}
+.plus.plus-white:hover > i,
+.plus.plus-white.active > i {
+    background-color: #f7f7f7
+}
+.plus.plus-white.active {
+    border-color: #f7f7f7
+}
+.plus.plus-black {
+    border-color: #1a1a1a;
+}
+.plus.plus-black:before,
+.plus.plus-black:after {
+    background-color: #1a1a1a
+}
+.plus.plus-black > i {
+    background-color: rgba(26, 26, 26, 0.1)
+}
+.plus.plus-black:hover,
+.plus.plus-black.active {
+    border-color: rgba(26, 26, 26, 0.4);
+}
+.plus.plus-black:hover:before,
+.plus.plus-black.active:before,
+.plus.plus-black:hover:after,
+.plus.plus-black.active:after {
+    background-color: #f7f7f7
+}
+.plus.plus-black:hover > i,
+.plus.plus-black.active > i {
+    background-color: #1a1a1a
+}
+.plus.plus-black.active {
+    border-color: #1a1a1a
+}
+
+.fp-section {
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.fp-section.active {
+    z-index: 11;
+}
+
+.light {
+    background-color: #f7f7f7;
+    color: #282828;
+}
+
+.half-width {
+    width: 50%;
+}
+
+.half-height {
+    height: 50%;
+    position: relative;
+}
+
+.dark {
+    background-color: #1a1a1a;
+}
+
+.dark, .very-dark {
+    color: #f7f7f7;
+}
+
+.dark a, .very-dark a {
+    color: #f7f7f7;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.imagefull {
+    width: 100%;
+    height: 100%;
+}
+
+.hero {
+    margin: 0 0 1em;
+    zoom: 1;
+}
+
+.hero:after {
+    clear: both;
+}
+
+.hero:before, .hero:after {
+    content: "";
+    display: table;
+}
+
+.btn {
+    background: none;
+    border: 1px solid rgba(40,40,40,0.2);
+    -webkit-border-radius: 7px;
+    border-radius: 7px;
+    color: #282828;
+    cursor: pointer;
+    font-size: .9em;
+    height: 50px;
+    line-height: 50px;
+    outline: none;
+    text-transform: lowercase;
+    display: inline-block;
+    padding: 0 30px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    transition: all 0.3s;
+    white-space: nowrap;
+}
+
+.btn.icon-prev > span {
+    margin-right: 20px;
+}
+
+.btn > span {
+    vertical-align: bottom;
+    display: inline-block;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    transition: all 0.3s;
+    font-size: 0;
+    line-height: 1;
+}
+

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="side-slide.css" type="text/css">
+	<script type="text/javascript" src="res/js/jquery.min.js"></script>
+
+	<script type="text/javascript" src="app.js"></script>
+
+	<script>
+	jQuery(document).ready(function() {
+		var $dayNight = $('.day-night');
+
+	    	// Don't do anything of day night isn't there
+	    	if($dayNight.length === 0) return;
+
+	    	var swipeBox = app.swipebox.create($dayNight, {
+	    		sideBySide : app.isMobileUserAgent
+    	});
+    });
+    </script>
+</head>
+
+<body>
+
+
+	<div class="container swipebox day-night">
+		<header class="show-mobile day-night-header">Day to Night</header>
+		<div id="scroller" style="height: 725px;">
+			<a href="#" class="bar" style="">
+				<!-- <span class="drag-text">click and drag</span>-->
+				<span class="hide-mobile">Day to Night</span>
+				<span class="click-slide hide-mobile">Click &amp; Slide</span>
+				<span class="show-mobile">Slide</span>
+			</a>
+		
+			<div id="side-0" class="pane" style="left: -63.7154%;">
+				<section class="p-0" style="">
+					<img alt="Day" src="http://i1.adis.ws/i/mgemi/00_1276_01_420_DAY?$DayNight$">
+				</section>
+			</div>
+		
+			<div id="side-1" class="pane" style="left: 36.2846%;">
+				<section class="p-0" style="">
+					<img alt="Day" src="http://i1.adis.ws/i/mgemi/00_1276_01_420_NIGHT?$DayNight$">
+				</section>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>
